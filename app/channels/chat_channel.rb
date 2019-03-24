@@ -10,8 +10,13 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    message_text = data['message']
-    Message.create! text: message_text
-    ActionCable.server.broadcast CHANNEL_NAME, message: message_text
+    message = Message.create! text: data['message']
+    ActionCable.server.broadcast CHANNEL_NAME, message_html: render_message(message)
+  end
+
+  private
+
+  def render_message(message)
+    ApplicationController.renderer.render partial: 'chat/message', locals: { message: message }
   end
 end
