@@ -1,0 +1,8 @@
+.jumbotron
+  h1.display-4 Log in
+  hr.my-4
+  = form_tag session_path do
+    .form-group
+      = label_tag 'Username'
+      = text_field_tag :username, nil, class: 'form-control'
+    = submit_tag 'Log in', class: 'btn btn-primary'
