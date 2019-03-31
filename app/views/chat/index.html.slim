@@ -1,5 +1,6 @@
 .messages
   #messages-container
     = render partial: 'message', collection: @messages
-  .controls
-    = text_area_tag :message_field
+  .controls.py-3
+    = text_area_tag :message_field, nil, rows: 2, class: 'form-control', \
+        placeholder: 'Type your message here and press ENTER to send'
