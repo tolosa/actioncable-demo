@@ -10,4 +10,7 @@ html lang='en'
     = javascript_include_tag 'application'
 
   body
-    = yield
+    .navbar.navbar-dark.bg-primary
+      .navbar-brand My awesome chat!
+    .container-fluid
+      = yield
