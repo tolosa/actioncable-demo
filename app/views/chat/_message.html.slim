@@ -1,1 +1,5 @@
-p = message.text
+.message.media
+  = image_tag message.avatar, size: '50x50'
+  .media-body
+    h5 = message.username
+    = message.text
