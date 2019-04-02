@@ -1,5 +1,7 @@
 .message.media
   = avatar_image message.username
   .media-body
-    h5 = message.username
+    h5
+      = message.username
+      small.text-muted =< message.created_at.localtime.to_s(:time)
     = message.text
