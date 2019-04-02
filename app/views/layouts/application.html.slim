@@ -20,5 +20,6 @@ html lang='en'
               = current_username
             .dropdown-menu
               = link_to 'Sign out', session_path, method: :delete, class: 'dropdown-item'
+    = flash_messages
     .container-fluid
       = yield

@@ -8,7 +8,7 @@ class ChatController < ApplicationController
   private
 
   def check_session
-    redirect_to new_session_path \
-      unless logged_in? # TODO: add flash message
+    redirect_to new_session_path, alert: 'You need to be logged in' \
+      unless logged_in?
   end
 end
