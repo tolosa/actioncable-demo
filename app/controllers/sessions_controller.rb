@@ -2,8 +2,14 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    cookies[USERNAME_COOKIE] = params[:username]
-    redirect_to chat_path
+    @username = params[:username]
+    if @username.length > 2
+      cookies[USERNAME_COOKIE] = @username
+      redirect_to chat_path
+    else
+      flash.now.alert = 'You need to enter a valid username, at least 3 characters long'
+      render :new
+    end
   end
 
   def destroy
