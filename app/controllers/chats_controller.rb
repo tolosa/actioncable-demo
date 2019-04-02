@@ -1,8 +1,13 @@
-class ChatController < ApplicationController
+class ChatsController < ApplicationController
   before_action :check_session
 
-  def index
+  def show
     @messages = Message.order :id
+  end
+
+  def destroy
+    Message.delete_all
+    redirect_to chat_path
   end
 
   private

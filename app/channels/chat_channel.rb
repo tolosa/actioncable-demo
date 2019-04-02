@@ -17,6 +17,6 @@ class ChatChannel < ApplicationCable::Channel
   private
 
   def render_message(message)
-    ApplicationController.renderer.render partial: 'chat/message', locals: { message: message }
+    ApplicationController.renderer.render partial: 'chats/message', locals: { message: message }
   end
 end

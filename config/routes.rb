@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   resource :session, only: %i[new create destroy]
-  get 'chat', action: :index, controller: 'chat'
+  resource :chat, only: %i[show destroy]
 
-  root 'chat#index'
+  root 'chats#show'
 end
