@@ -1,6 +1,9 @@
 .messages
   #messages-container
-    = render partial: 'message', collection: @messages
+    - if @messages.empty?
+      h1.no-messages.display-4.text-muted NO MESSAGES YET :(
+    - else
+      = render partial: 'message', collection: @messages
   .controls.py-3
     = text_area_tag :message_field, nil, rows: 2, class: 'form-control', \
         placeholder: 'Type your message here and press ENTER to send'

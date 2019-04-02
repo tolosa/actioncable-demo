@@ -11,6 +11,7 @@ App.chat = App.cable.subscriptions.create('ChatChannel', {
     const $message = $(data['message_html']);
     $message.hide();
     $container = $('#messages-container');
+    $container.find('.no-messages').hide();
     $container.append($message);
     $message.slideDown(150, () => {
       $container.scrollTop($container.prop('scrollHeight'));
