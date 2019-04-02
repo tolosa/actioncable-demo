@@ -8,7 +8,10 @@ App.chat = App.cable.subscriptions.create('ChatChannel', {
   },
 
   received: function(data) {
-    $('#messages-container').append(data['message_html']);
+    const $message = $(data['message_html']);
+    $message.hide();
+    $('#messages-container').append($message);
+    $message.slideDown(200);
   },
 
   speak: function(message) {
