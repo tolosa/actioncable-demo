@@ -18,7 +18,7 @@ html lang='en'
             a.nav-link.dropdown-toggle role='button' data-toggle='dropdown' href='#'
               = avatar_image current_username, size: 28
               = current_username
-            .dropdown-menu
+            .dropdown-menu.dropdown-menu-right
               = link_to 'Sign out', session_path, method: :delete, class: 'dropdown-item'
               .dropdown-divider
               = link_to 'Delete all mesages', chat_path, method: :delete, class: 'dropdown-item text-danger', \
